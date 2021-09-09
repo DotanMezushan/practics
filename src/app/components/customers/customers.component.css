@@ -1,0 +1,15 @@
+
+
+.past{
+    background-color: rgb(113, 231, 34);
+}
+.future{
+    background-color: rgb(23, 119, 245);
+}
+
+.odd{
+    background-color: rgb(236, 55, 85);
+}
+.even{
+    background-color: rgb(161, 64, 226);
+}

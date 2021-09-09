@@ -1,0 +1,44 @@
+<app-page-headers
+[title]="headerTitleParent"
+[headerDescription]="headerDescriptionParent"
+[headerIcon]="headerIconParent" >
+</app-page-headers>
+<h3>Company Customers Table</h3>
+<table *ngIf="customersModel?.length; else noCustomersYet" class="table">
+  <thead>
+      <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Is Guy</th>
+          <th scope="col">Birth day</th>
+         
+      </tr>
+
+  </thead>
+      <tbody>
+         
+          <tr [ngClass]="{'odd':isOdd,'even': isEven}" 
+          *ngFor=
+           "let customer of customersModel;
+           even as isEven;
+           odd as isOdd" >
+              <td>{{customer.name |nameFix |nameSuffix:customer.isGuy |uppercase}}</td>
+              <td [style.font-size.px]="customer.email.length">{{customer.email}}</td>
+              <td>{{customer.isGuy}}</td>
+              <td   [ngClass]="{
+                  'past': isAlreadyHaveBirthdayThisYear(customer.birthday),
+                  'future': !isAlreadyHaveBirthdayThisYear(customer.birthday)
+              }">{{customer.birthday |date :'MM/yyyy'}}</td>
+              
+       
+          </tr>
+      </tbody>
+</table>
+<ng-template #noCustomersYet>
+    <strong>there is no customers yet</strong>
+    <br/>
+    <br/>
+    <div class="spinner-border text-primary" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+</ng-template>
