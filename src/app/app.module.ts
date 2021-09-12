@@ -12,6 +12,9 @@ import { PageHeadersComponent } from '../assets/page-headers/page-headers.compon
 import { NameFixPipe } from './pipes/name-fix.pipe';
 import { NameSuffixPipe } from './pipes/name-suffix.pipe';
 import { HttpClientModule } from '@angular/common/http';
+import { NewContactComponent } from './components/new-contact/new-contact.component';
+import { NewCustomerComponent } from './components/new-customer/new-customer.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -25,13 +28,17 @@ import { HttpClientModule } from '@angular/common/http';
     PageHeadersComponent,
     NameFixPipe,
     NameSuffixPipe,
+    NewContactComponent,
+    NewCustomerComponent,
     
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

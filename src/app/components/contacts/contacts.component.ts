@@ -50,34 +50,3 @@ export class ContactsComponent implements OnInit {
   }
 
 }
-// this.contacts=[
-//   {
-//     name: 'Victor',
-//     email: "tsanhan@gmail.com",
-//     birthday: '09/16/1985',
-//     phones:['0366555663']
-    
-//   },
-//   {
-//     name: 'Dima',
-//     email: "d_com@walla.com",
-//     birthday: '10/25/1890'
-//   },
-//   {
-//     name: 'Haim',
-//     email: "haim_hamekach@gmail.com",
-//     birthday: '12/09/1976'
-//   },
-//   {
-//     email: "koralyehezkel@gmail.com",
-//     name: 'Koral',
-//     birthday: '05/03/1999',
-//     phones:['0926653365','0426698805']
-//   },
-//   {
-//     email: "dotanbm3052@gmail.com",
-//     name: 'Dotan',
-//     birthday: '01/18/1992',
-//     phones:['0546511144']
-//   }
-// ];

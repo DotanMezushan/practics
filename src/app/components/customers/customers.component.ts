@@ -38,7 +38,7 @@ export class CustomersComponent implements OnInit {
     });
   }
 
-  isAlreadyHaveBirthdayThisYear(date: Date): boolean { 
+  isAlreadyHaveBirthdayThisYear(date?: Date): boolean { 
     console.log("i am date");
     console.log(date);
     
@@ -46,7 +46,8 @@ export class CustomersComponent implements OnInit {
     console.log("i am currentDate");
     console.log(currentDate);
 
-    let dateAsNumber=Date.parse(date.toString())
+    if(date!== undefined){
+      let dateAsNumber=Date.parse(date.toString())
     let dateAsDate=new Date(dateAsNumber)
     console.log("i am new Date");
     console.log(dateAsDate);
@@ -54,6 +55,9 @@ export class CustomersComponent implements OnInit {
       if( dateAsDate.getMonth()!==currentDate.getMonth())
       return dateAsDate.getMonth() < currentDate.getMonth();
       return (dateAsDate.getDate() <= currentDate.getDate()); 
+    }
+    return false;
+    
     
   }
 
