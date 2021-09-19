@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-new-contact',
@@ -15,7 +16,7 @@ export class NewContactComponent implements OnInit {
   birthday: string="";
   phones ?:string[]=undefined;
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
     this.headerIconParent="fas fa-plus-circle";
@@ -25,6 +26,8 @@ export class NewContactComponent implements OnInit {
   onSubmit($formObject:any){
     console.log($formObject);
     console.log($formObject.form.value);
-  }
-
+      
+  };
 }
+
+
